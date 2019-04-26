@@ -1,8 +1,8 @@
-# Python base image for plotting
-FROM python:2.7.14-slim-jessie as downloader
-ARG VERSION=201808.03
+# Python base image for tnhapfilter and other python scripts
+FROM python:2.7.16-slim-stretch as downloader
+ARG VERSION=201808.05
 
-LABEL container.base.image="python:2.7.14-jessie" \
+LABEL container.base.image="python:2.7.16-slim-stretch" \
       software.version="${VERSION}" \
       software.website="https://www.sentieon.com/"
 
@@ -13,8 +13,8 @@ RUN apt-get update && apt-get install -y wget && \
       tar -zxf - -C /opt/sentieon/
 
 # Build the container
-FROM python:2.7.14-slim-jessie
-ARG VERSION=201808.03
+FROM python:2.7.16-slim-stretch
+ARG VERSION=201808.05
 
 COPY --from=downloader /opt/sentieon/sentieon-genomics-${VERSION} /opt/sentieon/sentieon-genomics-${VERSION}
 CMD ["/bin/bash"]
