@@ -1,6 +1,6 @@
 # Python base image for tnhapfilter and other python scripts
 FROM python:2.7.16-slim-stretch as downloader
-ARG VERSION=201808.07
+ARG VERSION=201911
 
 LABEL container.base.image="python:2.7.16-slim-stretch" \
       software.version="${VERSION}" \
@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y wget && \
 
 # Build the container
 FROM python:2.7.16-slim-stretch
-ARG VERSION=201808.07
+ARG VERSION=201911
 
 COPY --from=downloader /opt/sentieon/sentieon-genomics-${VERSION} /opt/sentieon/sentieon-genomics-${VERSION}
 CMD ["/bin/bash"]
