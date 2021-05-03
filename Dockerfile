@@ -1,6 +1,6 @@
 # Python base image for python scripts
 FROM python:3.8.6-slim-buster as downloader
-ARG VERSION=202010
+ARG VERSION=202010.02
 
 LABEL container.base.image="python:3.8.6-slim-buster" \
       software.version="${VERSION}" \
@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y wget && \
 
 # Build the container
 FROM python:3.8.6-slim-buster
-ARG VERSION=202010
+ARG VERSION=202010.02
 
 COPY --from=downloader /opt/sentieon/sentieon-genomics-${VERSION} /opt/sentieon/sentieon-genomics-${VERSION}
 CMD ["/bin/bash"]
