@@ -13,7 +13,7 @@ Build a container image for a specific version of the Sentieon tools:
 ```bash
 git clone https://github.com/Sentieon/sentieon-docker.git
 cd sentieon-docker
-docker build --build-arg VERSION=202010.02 .
+docker build --build-arg VERSION=202112 .
 # ...
 # Successfully built a1575042a0a6
 ```
@@ -24,7 +24,7 @@ Run the created container interactively:
 $ docker run --rm -it a1575042a0a6 /bin/bash
 root@fbcaddc2fb3c:/# sentieon
 Thank you for using Sentieon software. Supported commands are:
-  bamslice bwa driver fqidx gnuplot licclnt licsrvr plot rcat tnhapfilter umi umiutil util
+  STAR bamslice bwa driver fqidx gnuplot licclnt licsrvr minimap2 plot pyexec rcat umi util
 ```
 
 ## More information

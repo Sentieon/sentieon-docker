@@ -1,6 +1,6 @@
 # Python base image for python scripts
 FROM python:3.8.6-slim-buster as downloader
-ARG VERSION=202010.02
+ARG VERSION=202112
 
 LABEL container.base.image="python:3.8.6-slim-buster" \
       software.version="${VERSION}" \
