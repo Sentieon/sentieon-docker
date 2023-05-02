@@ -4,7 +4,7 @@ ARG SENTIEON_VERSION
 RUN test -n "$SENTIEON_VERSION"
 
 LABEL container.base.image="debian:bullseye-20220328-slim" \
-      software.version="${VERSION}" \
+      software.version="${SENTIEON_VERSION}" \
       software.website="https://www.sentieon.com/"
 
 # Download the software from the permalink
