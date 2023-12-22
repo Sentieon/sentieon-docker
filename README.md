@@ -13,7 +13,7 @@ Build a container image for a specific version of the Sentieon tools:
 ```bash
 git clone https://github.com/Sentieon/sentieon-docker.git
 cd sentieon-docker
-docker build --build-arg SENTIEON_VERSION=202308 .
+docker build --build-arg SENTIEON_VERSION=202308.01 .
 # ...
 # Successfully built a1575042a0a6
 ```
