@@ -1,9 +1,9 @@
-FROM debian:stable-20250520-slim AS downloader
+FROM debian:trixie-20260824-slim AS downloader
 
 ARG SENTIEON_VERSION
 RUN test -n "$SENTIEON_VERSION"
 
-LABEL container.base.image="debian:stable-20250520-slim" \
+LABEL container.base.image="debian:trixie-20260824-slim" \
       software.version="${SENTIEON_VERSION}" \
       software.website="https://www.sentieon.com/"
 
@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y curl make gcc gzip libgd-dev libcairo2-
   make install
 
 # Build the container
-FROM debian:stable-20250520-slim
+FROM debian:trixie-20260824-slim
 ARG SENTIEON_VERSION
 ENV SENTIEON_VERSION=$SENTIEON_VERSION
 
